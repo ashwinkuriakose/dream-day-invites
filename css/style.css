@@ -143,6 +143,7 @@ a.more {
 .hero {
   background: #3b5d50;
   padding: calc(4rem - 30px) 0 0rem 0;
+  position: relative;
 }
 
 @media (min-width: 768px) {
@@ -221,23 +222,7 @@ a.more {
   }
 }
 
-.hero .hero-img-wrap:after {
-  content: "";
-  position: absolute;
-  width: 255px;
-  height: 217px;
-  background-image: url("../images/dots-light.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  right: -100px;
-  top: -0px;
-}
 
-@media (min-width: 1200px) {
-  .hero .hero-img-wrap:after {
-    top: -40px;
-  }
-}
 
 .btn {
   font-weight: 600;
@@ -1039,4 +1024,42 @@ textarea {
     display: none !important;
   }
 
+}
+
+.hero-img-wrapper  img {
+  max-width: 100%;
+}
+.hero .hero-img-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 255px;
+  height: 217px;
+  background-image: url("../images/dots-light.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -10px;
+  top: 10px;
+}
+
+
+@media (min-width: 992px) {
+  .hero-img-wrapper {
+    position: absolute;
+    bottom: 0;
+  }
+}
+@media (max-width: 991.98px) {
+  .hero {
+    padding-bottom: 0 !important;
+  }
+  .hero .hero-img-wrapper::after {
+    right: 10%;
+    top: 30%;
+  }
+
+}
+@media (max-width: 767.98px) {
+  .hero-img-wrapper {
+    padding: 20px 0px 0 ;
+  }
 }
